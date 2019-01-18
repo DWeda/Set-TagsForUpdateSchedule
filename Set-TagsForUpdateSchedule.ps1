@@ -1,4 +1,4 @@
-﻿<#
+<#
 .Synopsis
    Script to tag VM's for dynamic groups in Azure Update management
 .DESCRIPTION
@@ -62,9 +62,8 @@ try{
         }
     }
 }
-catch [Exception] {
-                  write-output $_.Exception.Message; 
+catch {
+       write-output $_.Exception.Message; 
 
 }
-
 
