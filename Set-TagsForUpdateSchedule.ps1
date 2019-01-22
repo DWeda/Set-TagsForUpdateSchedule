@@ -49,7 +49,7 @@ try{
                      $tags = (Get-AzureRmResource -ResourceGroupName $RG.resourcegroupname -Name $VM.Name).Tags
                      $tags += @{PatchWindow="$PatchWindowOne"}
                      Write-output $tags
-                     Set-AzureRmResource -ResourceGroupName $RG.resourcegroupname -Name $VM -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags -WhatIf
+                     Set-AzureRmResource -ResourceGroupName $RG.resourcegroupname -Name $VM -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags
                 
                 }
                 else{
@@ -57,7 +57,7 @@ try{
                     $tags = (Get-AzureRmResource -ResourceGroupName $RG.resourcegroupname -Name $VM.Name).Tags
                     $tags += @{PatchWindow="$PatchWindowTwo"}
                     Write-output $tags
-                    Set-AzureRmResource -ResourceGroupName $RG.resourcegroupname -Name $VM -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags -WhatIf
+                    Set-AzureRmResource -ResourceGroupName $RG.resourcegroupname -Name $VM -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags
                 }
         }
     }
